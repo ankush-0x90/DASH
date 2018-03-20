@@ -1,0 +1,24 @@
+*{padding:0;margin:0;outline:none}
+body,html{height:100%;max-height:100% !important}
+/*template ended */
+body {
+    background-color:#fff;
+}
+div.divCtrlPanel {
+    display:none;
+}
+canvas.canvasAv {
+    background-color:#fff;
+}
+div.divAv {
+    border:none;
+}
+
+
+
+#virtualHumanTd {
+    height:70vh;
+    width:100%;
+}
+
+

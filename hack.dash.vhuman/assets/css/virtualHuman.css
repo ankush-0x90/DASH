@@ -1,0 +1,145 @@
+
+
+*{padding:0;margin:0;outline:none;box-sizing:border-box;}
+body,html{height:100%;max-height:100% !important}
+body{overflow:scroll;}
+/*template ended */
+
+#splashScreen {
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-image:url(../img/background_new.jpg);
+    z-index:2000000000;
+    
+}
+#splashScreen #innerScreen {
+    width:100%;
+    height:100%;
+    background-color:rgba(2, 66, 89, 0.659);
+}
+#splashScreen #appText {
+    width:50%;
+    height:50%;
+    position:absolute;
+    top:30%;
+    left:25%;
+    justify-content:space-around;
+    text-align:center;
+}
+#splashScreen #appText h1 {
+    color:#fff;
+    font-size:55px;
+    font-family:sans-serif;
+}
+#splashScreen #appText h3 {
+    color:#fff;
+    font-size:15px;
+    font-weight:lighter;
+}
+#splashScreen div.footer {
+    position:fixed;
+    color:#ddd;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+
+}
+#spashScreen div.footer p {
+    font-weight:lighter;
+    font-size:20px;
+}
+body hr.light-blue {
+    width:30%;
+    margin:0 auto;
+    border-top:2px solid #ccc;
+}
+body {
+    background-color:#fff;
+}
+div.divCtrlPanel {
+    display:none;
+}
+canvas.canvasAv {
+    background-color:#fff;
+}
+div.divAv {
+    border:none;
+}
+
+
+body div.textLoading {
+}
+
+body div#textLoading {
+    width:100%;
+    font-size:25px;
+    text-align:center;
+    font-weight:bold;
+    min-height:50px;
+    padding-top:13px;
+    color:rgb(6, 91, 123);
+}
+#virtualHumanTd {
+    transition-duration:0.25s;
+    height:55vh;
+    width:100%;
+    position:relative;
+}
+
+#inputDivi {
+    text-align:center;
+    width:100%;
+}
+#inputDivi_First {
+    width:100%;
+    padding:15px;
+}
+#inputDivi_First div.col-md-50 {
+    float:left;
+    padding:10px;
+}
+#inputDivi_First div.col-md-50:first-child {
+    text-align:right;
+
+}
+#inputDivi_First input[type=text] {
+    border:none;
+    border:1px solid rgba(2, 93, 126, 0.659);
+    padding:8px 10px;
+    width:100%;
+}
+
+#inputDivi_First input#submit_first {
+    border:none;
+    padding:10px  15px;
+    background-color:rgb(6, 91, 123);
+    color:#fff;
+    border:1px solid transparent;
+}
+#inputDivi_First input#submit_first:hover{
+    background-color:#fff;
+    border:1px solid rgb(6,91,123);
+    color:rgb(6, 91, 123);
+}
+body div.inputDivi  div.separator {
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:0px 50px;
+
+}
+
+body div#inputDivi_Second {
+    padding:20px;
+}
+body div#inputDivi_Second img {
+    height:50px;
+    width:50px;
+    margin:0 auto;
+}
+#landscapeMessage {
+    display:none;
+}

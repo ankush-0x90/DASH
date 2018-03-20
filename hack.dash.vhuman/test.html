@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>CoffeeScript WebGL ARP Signing Avatar: loc.2018</title>
+
+
+<link rel="stylesheet"
+    href="cwa/cwasa.css" />
+<script type="text/javascript"
+    src="cwa/allcsa.js"></script>
+
+<script src="cwa/jquery.min.js"></script>
+    <link rel="stylesheet" href="cwa/virtualHuman.css">
+    
+</head>
+
+<body onload="CWASA.init();">
+
+<!--================================================================-->
+<div class="CWASAPanel av0" align="center" >
+</div>
+<!--================================================================-->
+<button onclick='pushSigML()'>PLay</button>
+<input type="text" id="ip_text">
+<input type="button" value="click for sigml" id="test_button" onclick="getsigml()">
+<script>
+    $(document).ready(function() {
+        var ele = $("div.CWASAPanel table tr td:last-child");
+        // $('#test_button').on('click',getsigml());
+    });
+
+    function getsigml(){
+        var xhr;
+        if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest();
+        }else if(window.ActiveXObject){
+            xhr = new ActiveXObject("Msxml2.XMLHTTP");
+        }else{
+            throw new Error("Ajax is not supported by your browser");
+        }
+
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                if(xhr.status == 200){
+                    xmlresponse = xhr.responseText;
+                    console.log(xmlresponse);
+                    pushSigMLArg(xmlresponse);
+                    
+                }
+            }
+        }
+        var text = document.getElementById('ip_text').value;
+        console.log("text : "+text);
+        xhr.open('POST','../hack.dash.api/');
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send("text="+text);
+    }
+
+function pushSigML() {
+
+    var playSigML = document.getElementById('playSigML');
+    var sigmaXML = `\<\?xml version="1.0" encoding="utf-8"?>
+                    <sigml>
+                <hns_sign gloss="A">
+                <hamnosys_nonmanual>
+                <hnm_mouthpicture picture="V"/>
+                </hamnosys_nonmanual>
+                <hamnosys_manual>
+                <hamparbegin/>
+                <hamfinger2/>
+                <hamthumbacrossmod/>
+                <hamplus/>
+                <hamflathand/>
+                <hamthumboutmod/>
+                <hamparend/>
+                <hamparbegin/>
+                <hamextfingerul/>
+                <hampalmdl/>
+                <hamplus/>
+                <hamextfingeror/>
+                <hampalmd/>
+                <hambetween/>
+                <hampalmdr/>
+                <hamparend/>
+                <hamparbegin/>
+                <hamthumb/>
+                <hamfingerpad/>
+                <hamplus/>
+                <hamindexfinger/>
+                <hamfingertip/>
+                <hamparend/>
+                <hamtouch/>
+                <hamchest/>
+                <hamclose/>
+                </hamnosys_manual>
+                </hns_sign>
+                </sigml>`;
+
+        var sigMLBlock = document.getElementById('sigMLBlock');
+        sigMLBlock.innerHTML = sigmaXML;
+        playSigML.click();
+}
+
+function pushSigMLArg(xmlresponse) {
+
+    var playSigML = document.getElementById('playSigML');
+    var sigmaXML = xmlresponse;
+
+    var sigMLBlock = document.getElementById('sigMLBlock');
+    sigMLBlock.innerHTML = sigmaXML;
+    playSigML.click();
+}
+
+
+
+</script>
+</body>
+</html>

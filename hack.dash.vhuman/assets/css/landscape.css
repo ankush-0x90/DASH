@@ -1,0 +1,10 @@
+
+@media screen and (max-width:800px) {
+    *{display:none}
+    #landscapeMessage {
+        display:block;
+        font-size:25px;
+        color:#000;
+    }
+
+}

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+       
+     </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
+    <title>DASH - Giving Voice</title>
+
+    <link rel="stylesheet"
+    href="assets/css/dash.index.css" />
+    <script type="text/javascript"
+    src="cwa/allcsa.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/virtualHuman.css">
+    <link rel="stylesheet" href="assets/css/dash.loader.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/landscape.css" media="screen and (orientation: landscape)">
+
+</head>
+
+<div id="landscapeMessage">
+    <h2>Landscape Mode Not Supported Yet! Please Rotate Your Mobile</h2>
+</div>
+
+
+<body onload= 'CWASA.init();'>
+    <div id="splashScreen">
+
+        <div id="innerScreen">
+            <div id="appText">
+                <h1>DASH</h1>
+                <h3>Giving Voice To Deaf</h3>
+                <div class="loader"></div>
+            </div>
+            <div class="footer">
+                <p>Designed And Developed By Team_DASH</p>
+            </div>
+        </div>
+    </div>
+    <div class="textLoading" id="textLoading">
+    </div>
+    <!--================================================================-->
+    <div class="CWASAPanel av0" align="center" >
+    </div>
+    <!--================================================================-->
+    <hr class='light-blue'/>
+
+    <div class="inputDivi" id="inputDivi" >
+        
+        <div id="inputDivi_First">
+            <div class="col-md-50">
+                <input type="text" id="ip_text" placeholder="Enter Your Text " />
+            </div>
+            <div class="col-md-50">
+                <input type="button" value="GO" id="submit_first" onclick="getsigml()" />
+            </div>
+        </div>
+   
+        <div class="separator">
+            <p class="or">OR</p>
+        </div>
+
+        <div id="inputDivi_Second">
+            <img src='assets/img/button.png' onclick="callRecorder()" />
+        </div>
+    </div>
+
+    <script src="assets/js/xmlCalls.js">
+    </script>
+    <script src="assets/js/dash.loader.js"></script>
+    <script>
+        
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script></body>
+</html>

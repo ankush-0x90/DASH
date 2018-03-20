@@ -1,0 +1,520 @@
+<!DOCTYPE HTML
+    PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>JASigning loc.2018 - Summary of Changes</title>
+
+<style type="text/css">
+h1,h2,h3 { color: navy }
+</style>
+
+</head>
+
+<body>
+
+<h2>JASigning loc.2018 - Summary of Changes</h2>
+
+
+<hr>
+
+<p>These are the main differences between this version and
+<a href="#095f-change-log">JASigning 0.9.5f</a>:
+</p>
+
+<ul>
+
+<li><p><strong>Improvements to SiGML Processing</strong>:
+SiGMLInLib, the component which performs conversions from H-SiGML
+(HNS SiGML) to G-SiGML (Gestural SiGML), and also from G-SiGML
+back to H-SiGML or HamNoSys, performs these conversions
+consistently with one another, and some errors in the conversion
+from H- to G-SiGML have been fixed.
+
+CAS (animation) data is now output in a more compact format.
+CAS input and output are consistent, so re-exporting a
+previously imported CAS file generally produces a result
+whose format matches that of the original.</p></li>
+
+<li><p><strong>Improved CAS Input and Output</strong>:
+CAS (animation) data is now output in a more compact format.
+CAS input and output are consistent, so re-exporting a
+previously imported CAS file generally produces a result
+whose format matches that of the original.</p></li>
+
+<li><p><strong>Improved Handling of Apps' Initial Options</strong>:
+The initial option settings for a JASigning app are now handled
+more flexibly.  In particular, different JNLP variants of the same
+underlying JASigning app can now use distinct initial options
+settings without confusion.  Initial options properties files are
+cached on the client to support offline operation.</p></li>
+
+</ul>
+
+
+<hr>
+
+<a name="095f-change-log"></a>
+<h3>JASigning 0.9.5f - Summary of Changes (2010-07)</h3>
+
+<p>These are the main differences between this version and
+<a href="#095e-change-log">JASigning 0.9.5e</a>:
+</p>
+
+<ul>
+
+<li><p><strong>Ambient Motion</strong>:
+Some of the avatars, including the standard avatar Anna,
+are now capable of ambient motion, both when idle and when signing.
+This feature is demonstrated in some of the applications and applets.
+As yet the facilities for detailed control of this feature are quite
+limited, but both JASigning applications include menu items allowing
+ambient motion to be switched on and off.</p></li>
+
+<li><p><strong>Video Generation</strong>:
+JASigning now has an experimental video generation facility.
+Because it depends on an externally provided video processing software library,
+this facility depends on a supporting video generation service application
+(running on the client system), which must be downloaded separately.
+For details on the download and use of the video generation service
+application, see the
+<a href="http://vhg.cmp.uea.ac.uk/tech/jas/vid/">JASigning Video Generation
+page</a>.</p></li>
+
+
+<li><p><strong>Security Certificate</strong>:
+The JASigning software components are now signed with a certificate issued by
+<a  href="http://www.globalsign.com/">GlobalSign</a> (to our School's
+consulting company, SYS Consulting Ltd.).
+While this gives stronger assurances about the software's authenticity
+than previously, it has one possible drawback for
+those running the software on Mac OS X:
+there is a bug/issue in the Mac OS X Java implementation which requires the
+system to be online when a JASigning application is launched, in order that
+the OCSP security checks can be made (even though the application is marked
+as suitable for offline execution).</p>
+<p>This means that on Mac OS X the JASigning applications can no be launched
+while completely offline.  (Although going offline once the application is
+successfully launched is not a problem.)
+The only way we can see of circumventing this problem is for us to provide an
+alternative, self-signed, copy of the software, which is not subject to this
+limitation (but which is correspondingly less secure).
+This self-signed version can be found at the URL obtained by inserting an extra
+step "ss/" into the path just before the version tag:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://vhg.cmp.uea.ac.uk/tech/jas/ss/std/">http://vhg.cmp.uea.ac.uk/tech/jas/ss/std/</a>
+</p>
+</li>
+
+<li><p><strong>Java Security Checks</strong>:
+JASigning has been adjusted to take account of the fussier security régime
+introduced into the Java releases of recent months.
+In particular, the JASigning applications and applets should no longer give rise
+to Java security messages about "mixtures of signed and unsigned
+components".</p></li>
+
+<li><p><strong>Platform Independent Applet</strong>:
+The main <a href="../SPA.html">SiGML Player Applet</a> and its variants
+are now launched as JNLP Applets on platforms that support this mechanism,
+falling back to the use of the JNLP Applet Launcher on those
+that don't.</p></li>
+
+<li><p><strong>Windows Support</strong>:
+Although our testing is relatively limited, JASigning apparently runs
+successfully on Windows 7.
+But users of Windows XP should note that on that platform JASigning
+applications and applets (apart from the SiGML Service Client)
+now (since 2010-03) require prior installation of the freely available
+<a href="http://www.microsoft.com/downloads/details.aspx?familyid=A5C84275-3B97-4AB7-A40D-3802B2AF5FC2">
+Microsoft Visual Studio C++ 2008 Redistributable Package</a> --
+which may well be present already on many Windows XP systems.</p>
+
+<li><p><strong>64-bit Support</strong>:
+Support for 64-bit operation on versions of Windows, Mac OS X
+and the Java runtime that support this.</p></li>
+
+<li><p><strong>Improved HamNoSys/XML Input Error Handling</strong>:
+Recovery from HamNoSys and XML errors in SiGML input texts is now robust --
+i.e. it should no longer be necessary to re-launch a JASigning application or
+applet after feeding erroneous SiGML input to it.</p></li>
+
+</ul>
+
+
+<hr>
+
+<a name="095e-change-log"></a>
+<h3>JASigning 0.9.5e - Summary of Changes (2009-12)</h3>
+
+<p>These are the main differences between this version and
+<a href="#095d-change-log">JASigning 0.9.5d</a>:
+</p>
+
+<ul>
+
+<li><p>Support for Windows Vista.</p></li>
+
+<li><p>Support for genuine offline running of a JASigning JNLP application
+once it has been run and cached from the server for the first time.</p></li>
+
+<li><p>Improved quality and range of HamNoSys 4 non-manuals for all
+avatars.</p></li>
+
+<li><p>Improvements in the
+<a href="../jnlp/SiGMLServiceClientApp.jnlp">SiGML Client/Editor</a>
+application's UI: the editor supports UNDO/REDO (Ctl-Z/Ctl-Shift-Z),
+and handles unsaved edits in a more forgiving way.</p></li>
+
+<li><p>Support in the
+<a href="../index.html#html-applets">SiGML Player Applet (SPA)</a>
+for "piped" SiGML input,
+that is, for SiGML input that is supplied one sign at a time over an extended
+period, for example, in response to input from the user.</p></li>
+
+<li><p>Support in the
+<a href="../jnlp/SiGMLURLApp.jnlp">SiGML URL Player</a> application
+for the saving of CAS animation data to a file on the client
+system, and support for the incorporation of CAS data into a SiGML stream
+using the <tt>&lt;signing_ref&gt;</tt> SiGML element.</p></li>
+
+<li><p>Support for explicit user control of the frame-dropping policy,
+intended for use in the case where the frame rate is too high for
+the graphics hardware.</p></li>
+
+<li><p>Definition of standard HTML frames, with associated scripts, to run the
+<a href="../index.html#html-applets">SiGML Player Applet (SPA)</a>
+either with a standard GUI or with a customised
+one.</p>
+
+<p>Note, however, that the usual
+<a href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a>
+means that unfortunately it is not possible to deploy a JASigning applet on
+some other host simply by linking to the standard SPA frame definition
+on this one.</p></li>
+
+</ul>
+
+
+<hr>
+
+<a name="095d-change-log"></a>
+<h3>JASigning 0.9.5d - Summary of Changes (2008-12)</h3>
+
+<p>These are the main differences between this version and
+<a href="#095c-change-log">JASigning 0.9.5c</a>:
+</p>
+
+<ul>
+
+<li><p>The two LiveConnect applets have been replaced by a single
+<a href="../SiGML-Player-Applet.html">SiGML Player Applet</a>, which accepts
+either form of SiGML sequence specification recognised by its two predecessors,
+that is, a SiGML URL or an explicit SiGML text.  It provides
+feedback to the HTML GUI via Javascript calls.</p>
+
+<p>The applet controls its signing
+avatar panel via its own event dispatch thread (EDT), which responds to
+two classes of event: GUI events coming from the user via the HTML/Javascript
+<a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide#LiveConnect_Overview">
+<em>LiveConnect</em></a> interface, and call-back events generated by the
+avatar panel itself.  The EDT generates an acknowledgement for each event it
+receives and at present it processes events serially, that is, it will not
+accept a new event until it has generated the acknowledgement for its
+predecessor.</p>
+
+<p>The EDT is thus a potential bottleneck, but the JASigning avatar panel
+component is intended to operate with enough asynchronous concurrency for this
+not to be a problem in practice.</p>
+
+<p>This event-based architecture should make it a relatively
+straightforward matter to enhance the applet while maintaining its robustness:
+a new operation can be introduced by making appropriate exensions to
+the applet's Event enumeration, and adding code to the EDT specifying how
+each new event is to be processed.</p>
+
+<p>The applet has a boolean option controlling the generation of event logging
+output on the Java console.</p>
+
+<p>(The LC-SiGML-Player and LC-SiGML-URL-Player applet classes are still included
+in the <code>use-jarp</code> library, but this release does not provide any
+HTML demos for them.)</p></li>
+
+
+<li><p>JASigning now allocates a local workspace for itself in a directory
+called <code>.jasigning</code> in the user's home directory.</p></li>
+
+
+<li><p>If the user wishes to define a default JA options set, that is, one
+common to all JASigning applications, then the file defining these options
+(<code>jadefaults.properties</code>) should be placed in the user's
+<code>.jasigning</code> directory.
+In the absence of this file, a standard JA default options file (which
+typically is empty) is read from the JASigning installation server instead.</p></li>
+
+
+<li><p>For an avatar with Cacheable access, the locally cached copy is now
+held in the user's JASigning workspace (<code>.jasigning</code> directory)
+rather than in the JNLP Persistence Service cache, as before.
+This means that avatars with Cacheable access can now be used by JASigning
+HTML applets (which do not have access to the JNLP cache).
+As a result, Cacheable access is probably now the most satisfactory
+avatar access mode in most contexts.</p></li>
+
+<li><p>JASigning now supports a standard installation-wide set of avatar
+configuration options.  The properties that may be defined in this set are:
+  <ul>
+  <li><code>avatar.id</code></li>
+  <li><code>avatar.id.list</code></li>
+  <li><code>direct.files.avatar.list</code></li>
+  <li><code>cacheable.avatars.list</code></li>
+  <li><code>avatar.config.base.uri</code></li>
+  <li><code>avatar.jar.base.uri</code></li>
+  </ul>
+<p>together possibly with appropriate entries, each for an individual
+avatar, AV, in one of the forms:</p>
+  <ul>
+  <li><code>avatar.direct.base.uri.AV</code> (if AV has Direct Files access)</li>
+  <li><code>avatar.jar.uri.AV</code> (if AV has Cacheable access)</li>
+  </ul></p>
+
+<p>(See the previous release's
+<a href="#095c-change-log">change list</a>
+for descriptions of these options.)<p>
+
+<p>The built-in JA options set does not now include settings for any of these
+options, but the standard JA options set may still include definitions for them
+through the JA default options and/or the application/applet-specific
+options.</p>
+
+<p>Definitions of avatar options in the JA options set supplement and
+override the installation's standard avatar configurataion options.
+Thus, for example, the installation may define a basic set of avatars and
+standard locations for their definition files, while a particular application
+may define additions to the installation's standard avatar set,
+together with locations for these extra avatars, and possibly also
+non-standard locations for avatars in the installation's original set.</p>
+
+<li><p>The SiGML Editor/Client application now uses the Preferences mechanism
+to remember the location of its SiGML folder from one invocation to the next.
+When first used the application prompts the user to choose the required folder
+via a standard file dialog.</p></li>
+
+<li><p>The behavour of the Frame Number spinner component used in the JASigning
+applications has been reworked and should now be more robust -- for example,
+in the case where SiGML animation generation is streamed
+(i.e. asynchronous).</p></li>
+
+<li><p>The <a href="../jnlp/SiGMLServicePlayer.jnlp">SiGML Service Player</a>
+application now supports streamed animation generation, that is, it should be
+possible (with the appropriate option setting) for that application to play
+the animation for earlier signs in a SiGML sequence while animation data is
+still being generated for later signs in the sequence, or even while waiting
+for later signs to be delivered from the remote source.</p></li>
+
+</ul>
+
+
+<hr>
+
+<a name="095c-change-log"></a>
+<h3>JASigning 0.9.5c - Summary of Changes (2008-07)</h3>
+
+<p>These are the main differences between this version and
+<a href="#095b-description">JASigning 0.9.5b</a>:
+</p>
+
+<ul>
+
+<li><p>Support for the
+<a href="https://applet-launcher.dev.java.net/">JNLP Applet Launcher</a> (JAL),
+which allows an applet in a web browser to be launched without any prior
+download of supporting native libraries and avatar definitions.<br>
+(And which despite its name appears not to use the JNLP APIs, but
+just the JNLP XML file format.)<br>
+All the remaining changes are consequences of this one.</p></li>
+
+<li><p>No "JASigning Applet Support" installation on the client system, nor
+explicit offers to install local avatar definitions, if appropriate, when
+a JASigning JNLP application is launched.
+Instead all cacheing of native libraries on the client depends on the Java
+Web Start cacheing mechanisms, or, in the case of an HTML applet,
+on the JAL's own cacheing mechanisms (whose activities
+are recorded on the Java console log, for those who are interested).
+The treatment of avatar data files is described below.</p></li>
+
+<li><p>Hence this version has no need of the system-wide JA_HOME
+preferences setting.
+In previous versions JA_HOME usually identified the installation directory
+on the client system.  In this version JA_HOME is effectively a fixed
+internal setting, forced to point to the remote JASigning base directory on the
+server.</p></li>
+
+<li><p>Applet-specific properties may now be set via <code>&lt;param&gt;</code>
+entries in the HTML <code>&lt;applet&gt;</code> element
+(or in a JNLP <code>&lt;applet-desc&gt;</code> element),
+the parameter name in each case being simply the the name of the preference
+setting it represents.<br>
+One consequence of this is that applet-specific properties files are no
+longer necessary, although they are still supported, for the time being, anyway.</li>
+Another consequence is that the special <code>avatar</code> parameter of
+previous versions must now for consistency be named <code>avatar.id</code></p></li>
+
+<li><p>There are now three possible access methods for an avatar's data files:</p>
+    <ul>
+	<li><p><strong>ClassPath</strong> Access: the folder of data files for the
+		given avatar is packaged in a JAR file together with a Java access class
+		(details below)
+		whose sole purpose is to provide a resource base against which the
+		avatar files can be accessed by a Java class loader.</p>
+		<p>Provided this avatar access JAR is placed on the classpath of
+		a JASigning application or applet the avatar is automatically
+		accessible -- and will benefit from Java's standard client-side
+		caching mechanisms.<br>
+		The drawback of this method is that on first use, the user is
+		forced to wait while every JAR of this kind is downloaded into
+		the Java client-side cache before the application or applet
+		can start.</p>
+		<p>This is the default access method.
+		(And it is also used to access the <code>COMMON/config.xml</code>
+		file.)</p></li>
+	<li><p><strong>Direct Files</strong> Access: this is essentially
+	the access method used in previous versions, that is, the avatar
+	data files are obtained via a base URL for the folder containing
+	these files -- but in previous versions that was typically a
+	<code>file:</code> URL on the client, whereas now it will typically
+	be a remote <code>http:</code> URL.</p></li>
+	<li><p><strong>Cacheable</strong> Access: this is similar to
+	the first access method in that the avatar data files are packaged
+	with an access class in a JAR file.  But in this case the JAR is not
+	put on the Java classpath; instead JASigning downloads it only on
+	demand and places it in the client's JNLP cache, from whence a temporary
+	copy is taken and dynamically loaded.</p>
+	<p>(Using the JNLP cache for this purpose seems to be a mistake since JNLP
+	is not available to HTML applets, so at present this access method is
+	available <em>only</em> to JNLP applications and applets.
+	But using a custom-built cache instead of the JNLP cache -- as JAL does --
+	would not be difficult to implement and JASigning may well change to do
+	this in the near future.)</p></li>
+	</ul>
+
+	<p>The access class for a given avatar, <code>marc</code> say, is
+	a miniscule Java class called <code>marc.Access</code> whose
+	compiled class file <code>Access.class</code>
+	is placed in the <code>marc</code> avatar data folder.
+	The Java code for this class is simply:</p>
+	<p><code>&nbsp;&nbsp;&nbsp;&nbsp;
+	    package marc; public final class Access{}</code></p></li>
+
+<li>There are a number of new properties/preferences settings to control
+the avatar access mechanisms, and several of the old setttings take on a
+more prominent role.  As noted above, an HTML applet can now
+control these settings by means of <code>&lt;param&gt;</code> entries
+in the relevant HTML <code>&lt;applet&gt;</code> element.
+	<ul>
+	<li><p><code>avatar.id</code>:&nbsp;&nbsp;
+		The name of the avatar to be loaded
+		initially.</p></li>
+	<li><p><code>avatar.id.list</code>:&nbsp;&nbsp;
+		Colon-separated list of avatars available to the
+		application/applet, e.g. <code>anna:marc</code>.<br>
+		(Since there is no longer an installation folder in the file system,
+		JASigning is no longer able to determine this list for itself by inspecting
+		its <code>agconfig</code> subfolder.)</p></li>
+	<li><p><code>direct.files.avatar.list</code>:&nbsp;&nbsp;
+		Colon-separated list of avatars
+		using the Direct Files access method.<br>
+		May be omitted (or explicitly <code>null</code>, or explicitly empty)
+		if the list is empty.</p></li>
+	<li><p><code>cacheable.avatar.list</code>:&nbsp;&nbsp;
+		Colon-separated list of avatars
+		using the Cacheable access method.<br>
+		May be omitted (or explicitly <code>null</code>, or explicitly empty)
+		if the list is empty.</p></li>
+	<li><p><code>avatar.config.base.uri</code>:&nbsp;&nbsp;
+		The default base location
+		for the data folders of avatars in the Direct Files list.</p></li>
+	<li><p><code>direct.files.base.uri.AVATAR</code>:&nbsp;&nbsp;
+		Assuming <code>AVATAR</code> appears in the Direct Files
+		avatar list, an entry of this form explicitly specifies the URL of
+		its avatar data folder,
+		overriding the default location implicit in the
+		<code>avatar.config.base.uri</code> setting.</p></li>
+	<li><p><code>avatar.jar.uri.AVATAR</code>:&nbsp;&nbsp;
+		Assuming <code>AVATAR</code> appears in the Cacheable avatar
+		list, an entry of this form specifies the URL of its access
+		JAR file.</p></li>
+	</ul>
+	<p>Clearly, the <code>avatar.id.list</code> should include the
+	<code>avatar.id</code> value, and should contain as sublists both the
+	<code>direct.files.avatar.list</code> and
+	<code>cacheable.avatar.list</code> values.</p></li>
+
+<li><p>As well as the various client-side cacheing mechanisms, this version
+	of JASigning currently caches all avatar data in memory for the remainder
+	of the session once loaded.  This could
+	amount to a good few Mb if many avatars are used, but probably not enough
+	to be a problem in most environments.</p></li>
+
+<li><p>At present this version of JASigning makes no attempt to set the Java
+	Applet runtime parameters for the user,
+	since the separate installer which used to do this is is no longer
+	used.</p></li>
+
+</ul>
+
+
+<hr>
+
+<a name="095b-description"></a>
+<h3>JASigning 0.9.5b (2008-02)</h3>
+
+<p>
+<em>JASigning</em> is a software system for scripted performance of sign language
+animations by a virtual human, or avatar.  The scripting language used to define
+these animations is SiGML (Signing Gesture Markup Language).</p>
+
+<p>
+SiGML is an XML application language, derived from
+<a href="http://www.sign-lang.uni-hamburg.de/Projects/HamNoSys.html">HamNoSys</a>,
+the sign language notation system developed at the University of Hamburg.</p>
+
+<p>
+<em>JASigning</em> is based on work undertaken at UEA in conjunction with our
+partners in the
+<a href="http://www.visicast.cmp.uea.ac.uk/">ViSiCAST</a> and
+<a href="http://www.sign-lang.uni-hamburg.de/eSIGN/">eSIGN</a> projects.
+It is an alternative to the
+<a href="http://www.sign-lang.uni-hamburg.de/eSIGN/Software.html">Avatar Plugin</a>
+software released at the end of the eSIGN project.  One important difference
+is that <em>JASigning</em> runs on Mac OS X as well as Windows.</p>
+
+<p>
+<em>JASigning</em> is a combination of
+<a href="http://java.sun.com/">Java</a> software with supporting native libraries.
+So, use of <em>JASigning</em> requires that the
+<a href="http://www.java.com/en/download/index.jsp">Java runtime</a>
+software, version 5 or later, is installed on the client system.<br>
+(Java is pre-installed on all Mac OS X systems, and on many Windows systems.)</p>
+
+<p>
+The standard method of accessing a <em>JASigning</em> application or
+applet is via
+<a href="http://java.sun.com/products/javawebstart/">Java Web Start</a>
+using JNLP, the Java Network Launch Protocol.</p>
+
+
+<hr>
+
+[<a href="../index.html">Back</a> to the main <em>JASigning</em> page]
+
+<hr>
+
+<p>
+<small><em>RE &nbsp;&nbsp; 2011-02-10</em></small>
+
+</body>
+
+</html>
